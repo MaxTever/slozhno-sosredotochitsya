@@ -1,5 +1,345 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+.shadow-decor {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
 
 .page {
+  font-family: var(--font-family), monospace;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.cover {
+  display: grid;
+  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  min-block-size: 100vh;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--dec-color);
+  border-block-start: 1px solid var(--dec-color);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--dec-color, #353430);
+  border-block-end: 1px solid var(--dec-color, #353430);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.header {
+  display: grid;
+  align-items: start;
+}
+
+.header-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  color: var(--pink-color-1);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header-description {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--black-color-1);
+  background-color: var(--accent-color);
+  height: max(117px);
+  width: clamp(calc(100vmin - 20px), 50vh, calc(50vw - 23px));
+  margin-block: 55px;
+  justify-self: center;
+}
+
+.decor-rec {
+  z-index: -1;
+  position: absolute;
+  visibility: var(--decor-rec-v);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: 20px;
+  inset-block-start: 10px;
+  
+}
+
+.decor-rec::before {
+  content: "REC";
+  color: var(--dec-color);
+  line-height: 24px;
+}
+
+.decor-rec::after{
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 4px var(--accent-color);
+  background: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-block: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.header__theme-menu-button {
+  padding: 1px 13px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--button-text);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hover-button-border);
+}
+
+.header__theme-menu-button:focus{
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--dec-color);
+  outline-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--dec-color);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+  font-family: var(--font-family), monospace;
+}
+
+.section {
+  display: grid;
+
+}
+
+.article-list {
+  display: grid;
+  gap: 20px;
+}
+
+.article-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
+  margin-block-end: 20px;
+  color: var(--article-title);
+}
+
+
+.title-decor {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px; 
+  background-color: var(--accent-color);
+  margin-block-end: 20px;
+}
+
+.article-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px;
+  margin-block-start: 10px;
+  color: var(--text-color);
+}
+
+.title-advices {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23.4px; 
+  background-color: var(--accent-color);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.gallery {
+  gap: 10px;
+}
+
+.gallery-title {
+  margin-block-end: 10px;
+}
+
+.gallery-img-list {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-item-img {
+    display: block;
+    object-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+  display: grid;
+  min-block-size: 100vh;
+}
+
+.footer-title {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82.5%;
+  color: var(--pink-color-1);
+}
+
+@media(width >= 768px){
+
+  .main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 170px;
+    margin-block-end: 70px;
+  }
+
+  .header-title{
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-left: -20px;
+  }
+ 
+  .header-description{
+    justify-self: right;
+    width: clamp(calc(50vmin - 20px), 50vh, calc(50vw - 23px));
+  }
+
+  .section {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .article-title {
+    margin-block-end: 0;
+  }
+
+  .reduce-article-list {
+    grid-column-start: span 2;
+  }
+  
+  .gallery {
+    display: grid;
+  }
+
+  .gallery-img-list {
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+  
+  .gallery-img-list-item:first-child {
+    grid-column-start: span 2;
+  }
+
+  .gallery-img-list-item:last-child {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .gallery-img-list-item:nth-child(2),
+  .gallery-img-list-item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+
+  .decor-rec {
+    inset-inline-end: 30px;
+    inset-block-start: 22px;
+  }
+
+}
+
+@media(width >= 1024px){
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  
+  .header-title {
+    align-self: end;
+    color: var(--pink-color-1);
+    text-shadow: 4px 4px 0 var(--pink-color-2);
+  }
+
+  .header-description {
+    height: max(71px);
+    width: calc(50vw - 23px);
+    align-self: center;
+  }
+
+  .reduce-article-list {
+      grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
 }
