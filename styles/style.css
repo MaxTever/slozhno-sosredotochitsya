@@ -89,7 +89,7 @@
   line-height: 24px;
 }
 
-.decor-rec::after{
+.decor-rec::after {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -126,7 +126,7 @@
   border: 1px solid var(--hover-button-border);
 }
 
-.header__theme-menu-button:focus{
+.header__theme-menu-button:focus {
   outline: none;
 }
 
@@ -166,6 +166,9 @@
   color: var(--article-title);
 }
 
+.simple_advices {
+  margin-block-end: 20px;
+}
 
 .title-decor {
   font-size: 18px;
@@ -256,12 +259,12 @@
     margin-block-end: 70px;
   }
 
-  .header-title{
+  .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-left: -20px;
   }
  
-  .header-description{
+  .header-description {
     justify-self: right;
     width: clamp(calc(50vmin - 20px), 50vh, calc(50vw - 23px));
   }
