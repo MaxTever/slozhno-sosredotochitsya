@@ -20,6 +20,7 @@
     --background-image: url(../images/cover-image-light.png);
     --decor-rec-v: hidden;
     --title-text-color: #353430;
+    --page-bacground-color: #fff1f7;
   }
 
 }
@@ -38,4 +39,5 @@
   --background-image: url(../images/cover-image-light.png);
   --decor-rec-v: hidden;
   --title-text-color: #353430;
+  --page-bacground-color: #fff1f7;
 }

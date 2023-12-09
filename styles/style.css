@@ -7,6 +7,7 @@
 .page {
   font-family: var(--font-family), monospace;
   background-image: var(--background-image);
+  background-color: var(--page-background-color, #fff1f7);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -68,10 +69,10 @@
   line-height: 23.4px;
   color: var(--black-color-1);
   background-color: var(--accent-color, #FF8DCB);
-  height: max(117px);
   width: clamp(calc(100vmin - 20px), 50vh, calc(50vw - 23px));
   margin-block: 55px;
   justify-self: center;
+  height: fit-content;
 }
 
 .decor-rec {
@@ -105,7 +106,6 @@
 
 .header__theme-menu {
   justify-self: end;
-  /* margin-block: 65px; */
   align-self: center;
 }
 
@@ -155,7 +155,6 @@
 
 .section {
   display: grid;
-
 }
 
 .article-list {
@@ -173,7 +172,14 @@
 }
 
 .simple_advices {
+  background-color: var(--accent-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
   margin-block-end: 20px;
+  color: var(--article-title);
+  height: fit-content;
 }
 
 .title-decor {
@@ -263,8 +269,7 @@
   }
 
   .header__theme-menu {
-    margin-block-start: 170px;
-    margin-block-end: 70px;
+    align-self: center;
   }
 
   .header-title {
@@ -274,12 +279,18 @@
  
   .header-description {
     justify-self: right;
+    align-self: center;
     width: clamp(calc(50vmin - 20px), 50vh, calc(50vw - 23px));
   }
 
   .section {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+  }
+
+  .section-how .article-list{
+    grid-column-start: 2;
+    margin-block-start: -70px;
   }
 
   .article-title {
@@ -342,6 +353,10 @@
     height: max(71px);
     width: calc(50vw - 23px);
     align-self: center;
+  }
+
+  .section-how .article-list {
+    margin-block-start: -48px;
   }
 
   .reduce-article-list {
