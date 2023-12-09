@@ -14,7 +14,7 @@
     --background-image: url(../images/cover-image-dark.png);
     --decor-rec-v: visible;
     --title-text-color: #000028;
-    --page-bacground-color: #000028;
+    --page-bacground-color: var(--page-bacground-color, #000028);
   }
   
 }
@@ -33,5 +33,5 @@
   --background-image: url(../images/cover-image-dark.png);
   --decor-rec-v: visible;
   --title-text-color: #000028;
-  --page-bacground-color: #000028;
+  --page-bacground-color: var(--page-bacground-color, #000028);
 }
