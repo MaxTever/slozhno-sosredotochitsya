@@ -7,8 +7,7 @@
     --button-text: #FF0070;
     --hover-button-border: #FF007066;
     --page-title-color: #DB00FF;
-    --pink-color-2: #FF0070;
-    --black-color-1: #000028;
+    --header-title-shadow: #FF0070;
     --accent-color: #FF0070;
     --font-family: 'IBM Plex Mono', monospace;
     --background-image: url(../images/cover-image-dark.png);
@@ -26,8 +25,7 @@
   --button-text: #FF0070;
   --hover-button-border: #FF007066;
   --page-title-color: #DB00FF;
-  --pink-color-2: #FF0070;
-  --black-color-1: #000028;
+  --header-title-shadow: #FF0070;
   --accent-color: #FF0070;
   --font-family: 'IBM Plex Mono', monospace;
   --background-image: url(../images/cover-image-dark.png);
