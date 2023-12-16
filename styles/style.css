@@ -18,7 +18,6 @@
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   block-size: max(100vh, 668px);
-  inline-size: max(100vw, 375px); 
 }
 
 .decorated-zone {
@@ -264,21 +263,6 @@
   color: var(--page-title-color);
 }
 
-@media (width>= 375px) {
-
-  .header-title{
-    margin-inline-end: 10px;
-  }
-
-  .header-description{
-    margin-inline-end: 10px;
-  }
-
-  .header__theme-menu-list {
-    margin-inline-end: 10px; 
-  }
-
-}
 
 @media (width >= 768px) {
 
@@ -388,5 +372,5 @@
 
 }
 
-
-/* * { outline: 1px solid yellow; } */
+/* 
+* { outline: 1px solid yellow; } */
