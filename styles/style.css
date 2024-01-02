@@ -11,7 +11,6 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow-x: hidden;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -67,11 +66,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--black-color-1);
+  color: var(--title-text-color);
   background-color: var(--accent-color, #FF8DCB);
   width: clamp(calc(100vmin - 20px), 50vh, calc(50vw - 23px));
   margin-block: 55px;
-  justify-self: center;
+  justify-content: center;
   height: fit-content;
 }
 
@@ -90,7 +89,7 @@
 .decor-rec::before {
   content: "rec";
   color: var(--dec-color, #353430);
-  line-height: 24px;
+  line-height: 25px;
   text-transform: uppercase;
 }
 
@@ -117,15 +116,17 @@
 
 
 .header__theme-menu-button {
-  padding: 1px 13px;
-  justify-content: center;
-  align-items: center;
+  padding: 2px 12px;
   flex-shrink: 0;
   text-transform: lowercase;
   border: 1px solid transparent;
   background-color: transparent;
   cursor: pointer;
   color: var(--button-text, #353430);
+  text-align: center;
+  font-family: var(--font-family), monospace;
+  font-size: 18px;
+  line-height: 18px;
 }
 
 .header__theme-menu-button:hover {
@@ -178,7 +179,7 @@
   font-weight: 700;
   line-height: 23.4px;
   margin-block-end: 20px;
-  color: var(--article-title);
+  color: var(--title-text-color);
   height: fit-content;
 }
 
@@ -196,8 +197,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px;
-  margin-block-start: 9.5px;
   color: var(--text-color);
+  margin-block-start: 10px;
 }
 
 .title-advices {
@@ -249,6 +250,7 @@
 .footer {
   display: grid;
   block-size: max(100vh, 668px);
+  /* inline-size: max(100vw, 375px); */
 }
 
 .footer-title {
@@ -259,6 +261,29 @@
   font-weight: 700;
   line-height: 82.5%;
   color: var(--page-title-color);
+}
+
+
+@media (width < 375px) {
+
+  .footer-title {
+    font-size: clamp(6.25rem, 6.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .header-title{
+    font-size: clamp(6.25rem, 6.0115rem + 1.0178vw, 7.5rem);
+  }  
+
+}
+
+@media (width > 375px) {
+
+  .header-description {
+    width: clamp(calc(100vmin - 30px), 50vh, calc(50vw - 23px));
+    justify-self: center;
+  }
+
+
 }
 
 @media (width >= 768px) {
@@ -290,7 +315,6 @@
 
   .section-how .article-list {
     grid-column-start: 2;
-    margin-block-start: -70px;
   }
 
   .article-title {
@@ -325,9 +349,16 @@
   }
 
   .decor-rec {
-    inset-inline-end: 38px;
+    inset-inline-end: 30px;
     inset-block-start: 20px;
+    text-align: center;
+    gap: 10.5px;
+    line-height: 28;
   }
+
+    .footer-title{
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    }
 
 }
 
@@ -336,7 +367,6 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-block: 0;
   }
 
   .header__theme-menu-list {
@@ -346,17 +376,17 @@
   .header-title {
     align-self: end;
     color: var(--page-title-color, #FFC2E6);
-    text-shadow: 4px 4px 0 var(--pink-color-2, #FF0070);
+    text-shadow: 4px 4px 0 var(--header-title-shadow, #FF0070);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header-description {
-    height: max(71px);
     width: calc(50vw - 23px);
     align-self: center;
   }
-
-  .section-how .article-list {
-    margin-block-start: -48px;
+  
+  .section{
+    column-gap: 10.5px;
   }
 
   .reduce-article-list {
@@ -368,5 +398,4 @@
   }
 
 }
-
 
