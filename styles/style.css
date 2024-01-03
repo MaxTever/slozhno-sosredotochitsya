@@ -81,16 +81,19 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  inset-inline-end: 20px;
-  inset-block-start: 10px;
-  
+  inset-inline-end: clamp(20px, 5.33333vw, 30px);
+  inset-block-start: clamp(10px, 2.66667vw, 20px);
 }
 
 .decor-rec::before {
-  content: "rec";
+  content: "REC";
   color: var(--dec-color, #353430);
   line-height: 25px;
   text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .decor-rec::after {
@@ -353,12 +356,12 @@
     inset-block-start: 20px;
     text-align: center;
     gap: 10.5px;
-    line-height: 28;
+    line-height: 28px;
   }
 
-    .footer-title{
-      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    }
+  .footer-title{
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 
 }
 
